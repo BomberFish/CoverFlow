@@ -18,16 +18,16 @@ struct ContentView: View {
                                 Image(album.image)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(width: 100.0, height: 100.0)
+                                    .frame(width: 150.0, height: 150.0)
                                 Text(album.name)
                                     .fontWeight(.bold)
                                 Text(album.artist)
                             }
                                 .padding()
-                                .rotation3DEffect(.degrees(-Double(geo.frame(in: .global).minX) / 8), axis: (x: 0, y: 1, z: 0))
-                                .frame(width: 200, height: 200)
+                                .rotation3DEffect(.degrees(-Double(geo.frame(in: .global).midX) / 16), axis: (x: 0, y: 1, z: 0))
+                                .frame(width: 300, height: 300)
                         }
-                        .frame(width: 200, height: 200)
+                        .frame(width: 300, height: 300)
                     }
                 }
             }
