@@ -24,8 +24,10 @@ struct AlbumView: View {
                             VStack {
                                 Text(album.name)
                                     .font(.system(.headline))
+                                    .multilineTextAlignment(.leading)
                                 Text(album.artist)
                                     .font(.system(.footnote))
+                                    .multilineTextAlignment(.leading)
                             }
                             Spacer()
                         }
