@@ -8,7 +8,7 @@
 import Foundation
 
 // this is going to be useless once i bring it to ipod, just for testing purposes
-public struct Album: Identifiable {
+public struct Album: Identifiable, Equatable {
     public var id = UUID()
     var image: String
     var name: String
@@ -16,7 +16,7 @@ public struct Album: Identifiable {
     var songs: [Song]
 }
 
-public struct Song: Identifiable {
+public struct Song: Identifiable, Equatable {
     public var id = UUID()
     var name: String
     var artist: String
