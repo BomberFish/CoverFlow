@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        let itemWidth = 300.0
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 0) {
                 ForEach(TestingLibrary) { album in
@@ -18,16 +19,16 @@ struct ContentView: View {
                                 Image(album.image)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(width: 150.0, height: 150.0)
+                                    .frame(width: itemWidth / 2, height: itemWidth / 2)
                                 Text(album.name)
                                     .fontWeight(.bold)
                                 Text(album.artist)
                             }
                                 .padding()
-                                .rotation3DEffect(.degrees(-Double(geo.frame(in: .global).midX) / 16), axis: (x: 0, y: 1, z: 0))
-                                .frame(width: 300, height: 300)
+                                .rotation3DEffect(.degrees((-Double(geo.frame(in: .global).minX) / 16) + itemWidth / 16), axis: (x: 0, y: 1, z: 0))
+                                .frame(width: itemWidth, height: itemWidth)
                         }
-                        .frame(width: 300, height: 300)
+                        .frame(width: itemWidth, height: itemWidth)
                     }
                 }
             }
