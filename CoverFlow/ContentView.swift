@@ -15,7 +15,7 @@ struct ContentView: View {
                     VStack {
                         GeometryReader { geo in
                             AlbumView(album: album)
-                                .padding()
+                                //.padding()
                                 .rotation3DEffect(.degrees((-Double(geo.frame(in: .global).minX) / 8) + itemWidth / 8), axis: (x: 0, y: 1, z: 0))
                                 .frame(width: itemWidth, height: itemWidth)
                                 .cornerRadius(10)
