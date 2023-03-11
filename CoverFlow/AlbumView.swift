@@ -11,7 +11,9 @@ struct AlbumView: View {
     public var album: Album
     @State var opened = false
     @State var rotation = 0.0
-    @State var animDuration = 0.5
+    // THESE SHOULD ALWAYS BE THE SAME!!!
+    let defaultAnimDuration = 0.3
+    @State var animDuration = 0.3
     var body: some View {
         if opened {
             ZStack {
@@ -21,15 +23,26 @@ struct AlbumView: View {
                     HStack {
                         Spacer()
                         Button(action: {
+                            print("Switching to album")
                             rotation = -90.0
                             DispatchQueue.main.asyncAfter(deadline: .now() + animDuration) {
                                 animDuration = 0.0
                                 rotation = 90.0
-                                animDuration = 0.5
+                                animDuration = defaultAnimDuration
                                 opened.toggle()
                             }
                         }, label: {Label("", systemImage: "chevron.left")})
                             .buttonStyle(PlainButtonStyle())
+                            .padding()
+                            .onTapGesture {
+                                rotation = -90.0
+                                DispatchQueue.main.asyncAfter(deadline: .now() + animDuration) {
+                                    animDuration = 0.0
+                                    rotation = 90.0
+                                    animDuration = defaultAnimDuration
+                                    opened.toggle()
+                                }
+                            }
                         HStack {
                             Spacer()
                             Spacer()
@@ -42,6 +55,7 @@ struct AlbumView: View {
                                     .multilineTextAlignment(.leading)
                             }
                             .multilineTextAlignment(.leading)
+                            Spacer()
                             Spacer()
                             Spacer()
                         }
@@ -93,12 +107,12 @@ struct AlbumView: View {
             .rotation3DEffect(.degrees(rotation), axis: (x: 0, y: 1, z: 0))
             .animation(.easeInOut(duration: animDuration), value: rotation)
             .onTapGesture {
-                print("switching")
+                print("Switching to list")
                 rotation = 90.0
                 DispatchQueue.main.asyncAfter(deadline: .now() + animDuration) {
                     animDuration = 0.0
                     rotation = -90.0
-                    animDuration = 0.5
+                    animDuration = defaultAnimDuration
                     opened.toggle()
                 }
             }
