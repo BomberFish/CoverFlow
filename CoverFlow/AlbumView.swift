@@ -29,6 +29,7 @@ struct AlbumView: View {
                                     .font(.system(.footnote))
                                     .multilineTextAlignment(.leading)
                             }
+                            .multilineTextAlignment(.leading)
                             Spacer()
                         }
                     }
