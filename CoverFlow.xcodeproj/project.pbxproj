@@ -16,7 +16,6 @@
 		D62045B429BBF07900B4EFAB /* CoverFlowUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62045B329BBF07900B4EFAB /* CoverFlowUITestsLaunchTests.swift */; };
 		D62045C129BBF3F700B4EFAB /* MusicStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62045C029BBF3F700B4EFAB /* MusicStructs.swift */; };
 		D62045C329BBF54D00B4EFAB /* TestingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62045C229BBF54D00B4EFAB /* TestingData.swift */; };
-		D62045C529BBFB2300B4EFAB /* ReallyCoolFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62045C429BBFB2300B4EFAB /* ReallyCoolFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +49,6 @@
 		D62045B329BBF07900B4EFAB /* CoverFlowUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverFlowUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D62045C029BBF3F700B4EFAB /* MusicStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicStructs.swift; sourceTree = "<group>"; };
 		D62045C229BBF54D00B4EFAB /* TestingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingData.swift; sourceTree = "<group>"; };
-		D62045C429BBFB2300B4EFAB /* ReallyCoolFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReallyCoolFunctions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +103,6 @@
 				D620459729BBF07600B4EFAB /* ContentView.swift */,
 				D62045C229BBF54D00B4EFAB /* TestingData.swift */,
 				D62045C029BBF3F700B4EFAB /* MusicStructs.swift */,
-				D62045C429BBFB2300B4EFAB /* ReallyCoolFunctions.swift */,
 				D620459929BBF07900B4EFAB /* Assets.xcassets */,
 				D620459E29BBF07900B4EFAB /* CoverFlow.entitlements */,
 				D620459B29BBF07900B4EFAB /* Preview Content */,
@@ -272,7 +269,6 @@
 				D620459829BBF07600B4EFAB /* ContentView.swift in Sources */,
 				D620459629BBF07600B4EFAB /* CoverFlowApp.swift in Sources */,
 				D62045C129BBF3F700B4EFAB /* MusicStructs.swift in Sources */,
-				D62045C529BBFB2300B4EFAB /* ReallyCoolFunctions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

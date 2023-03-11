@@ -14,10 +14,6 @@ struct ContentView: View {
                 ForEach(TestingLibrary) { album in
                     VStack {
                         GeometryReader { geo in
-                            let minx = -Double(geo.frame(in: .global).minX)
-                            let maxx = -Double(geo.frame(in: .global).minX)
-                            let arr = [minx, maxx]
-                            let middlex = calculateMedian(array: arr)
                             VStack {
                                 Image(album.image)
                                     .resizable()
@@ -28,7 +24,7 @@ struct ContentView: View {
                                 Text(album.artist)
                             }
                                 .padding()
-                                .rotation3DEffect(.degrees(middlex / 8), axis: (x: 0, y: 1, z: 0))
+                                .rotation3DEffect(.degrees(-Double(geo.frame(in: .global).minX) / 8), axis: (x: 0, y: 1, z: 0))
                                 .frame(width: 200, height: 200)
                         }
                         .frame(width: 200, height: 200)
