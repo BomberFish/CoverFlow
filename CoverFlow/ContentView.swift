@@ -25,7 +25,9 @@ struct ContentView: View {
                     }
                 }
             }
+            .ignoresSafeArea()
         }
+        .ignoresSafeArea()
     }
 }
 

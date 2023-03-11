@@ -10,6 +10,8 @@ import SwiftUI
 struct AlbumView: View {
     public var album: Album
     @State var opened = false
+    @State var rotation = 0.0
+    @State var animDuration = 0.5
     var body: some View {
         if opened {
             ZStack {
@@ -18,7 +20,15 @@ struct AlbumView: View {
                 VStack {
                     HStack {
                         Spacer()
-                        Button(action: {opened.toggle()}, label: {Label("", systemImage: "chevron.left")})
+                        Button(action: {
+                            rotation = -90.0
+                            DispatchQueue.main.asyncAfter(deadline: .now() + animDuration) {
+                                animDuration = 0.0
+                                rotation = 90.0
+                                animDuration = 0.5
+                                opened.toggle()
+                            }
+                        }, label: {Label("", systemImage: "chevron.left")})
                             .buttonStyle(PlainButtonStyle())
                         HStack {
                             Spacer()
@@ -61,20 +71,39 @@ struct AlbumView: View {
                 }
                 .background(.gray)
             }
+            .cornerRadius(10)
+            .rotation3DEffect(.degrees(rotation), axis: (x: 0, y: 1, z: 0))
+            .animation(.easeInOut(duration: animDuration), value: rotation)
             .padding()
+            .onAppear {
+                rotation = 0
+            }
         } else {
             VStack {
                 Image(album.image)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: itemWidth / 2, height: itemWidth / 2)
+                    .cornerRadius(10)
+                    .frame(width: itemWidth * 0.5, height: itemWidth * 0.5)
                 Text(album.name)
                     .fontWeight(.bold)
                 Text(album.artist)
             }
+            .cornerRadius(10)
+            .rotation3DEffect(.degrees(rotation), axis: (x: 0, y: 1, z: 0))
+            .animation(.easeInOut(duration: animDuration), value: rotation)
             .onTapGesture {
                 print("switching")
-                opened.toggle()
+                rotation = 90.0
+                DispatchQueue.main.asyncAfter(deadline: .now() + animDuration) {
+                    animDuration = 0.0
+                    rotation = -90.0
+                    animDuration = 0.5
+                    opened.toggle()
+                }
+            }
+            .onAppear {
+                rotation = 0
             }
         }
     }
