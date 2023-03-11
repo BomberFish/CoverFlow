@@ -25,7 +25,7 @@ struct ContentView: View {
                                 Text(album.artist)
                             }
                                 .padding()
-                                .rotation3DEffect(.degrees((-Double(geo.frame(in: .global).minX) / 16) + itemWidth / 16), axis: (x: 0, y: 1, z: 0))
+                                .rotation3DEffect(.degrees((-Double(geo.frame(in: .global).minX) / 8) + itemWidth / 8), axis: (x: 0, y: 1, z: 0))
                                 .frame(width: itemWidth, height: itemWidth)
                         }
                         .frame(width: itemWidth, height: itemWidth)
