@@ -16,6 +16,7 @@
 		D62045B429BBF07900B4EFAB /* CoverFlowUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62045B329BBF07900B4EFAB /* CoverFlowUITestsLaunchTests.swift */; };
 		D62045C129BBF3F700B4EFAB /* MusicStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62045C029BBF3F700B4EFAB /* MusicStructs.swift */; };
 		D62045C329BBF54D00B4EFAB /* TestingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62045C229BBF54D00B4EFAB /* TestingData.swift */; };
+		D62045C729BC009600B4EFAB /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62045C629BC009600B4EFAB /* AlbumView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D62045B329BBF07900B4EFAB /* CoverFlowUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverFlowUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D62045C029BBF3F700B4EFAB /* MusicStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicStructs.swift; sourceTree = "<group>"; };
 		D62045C229BBF54D00B4EFAB /* TestingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingData.swift; sourceTree = "<group>"; };
+		D62045C629BC009600B4EFAB /* AlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				D620459529BBF07600B4EFAB /* CoverFlowApp.swift */,
 				D620459729BBF07600B4EFAB /* ContentView.swift */,
+				D62045C629BC009600B4EFAB /* AlbumView.swift */,
 				D62045C229BBF54D00B4EFAB /* TestingData.swift */,
 				D62045C029BBF3F700B4EFAB /* MusicStructs.swift */,
 				D620459929BBF07900B4EFAB /* Assets.xcassets */,
@@ -268,6 +271,7 @@
 				D62045C329BBF54D00B4EFAB /* TestingData.swift in Sources */,
 				D620459829BBF07600B4EFAB /* ContentView.swift in Sources */,
 				D620459629BBF07600B4EFAB /* CoverFlowApp.swift in Sources */,
+				D62045C729BC009600B4EFAB /* AlbumView.swift in Sources */,
 				D62045C129BBF3F700B4EFAB /* MusicStructs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

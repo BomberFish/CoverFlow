@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+let itemWidth = 300.0
+
 @main
 struct CoverFlowApp: App {
     var body: some Scene {
