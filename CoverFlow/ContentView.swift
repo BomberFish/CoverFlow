@@ -11,14 +11,24 @@ struct ContentView: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 0) {
-                ForEach(1..<20) { num in
+                ForEach(TestingLibrary) { album in
                     VStack {
                         GeometryReader { geo in
-                            Text("Number \(num)")
-                                .font(.largeTitle)
+                            let minx = -Double(geo.frame(in: .global).minX)
+                            let maxx = -Double(geo.frame(in: .global).minX)
+                            let arr = [minx, maxx]
+                            let middlex = calculateMedian(array: arr)
+                            VStack {
+                                Image(album.image)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 100.0, height: 100.0)
+                                Text(album.name)
+                                    .fontWeight(.bold)
+                                Text(album.artist)
+                            }
                                 .padding()
-                                .background(.red)
-                                .rotation3DEffect(.degrees(-Double(geo.frame(in: .global).minX) / 8), axis: (x: 0, y: 1, z: 0))
+                                .rotation3DEffect(.degrees(middlex / 8), axis: (x: 0, y: 1, z: 0))
                                 .frame(width: 200, height: 200)
                         }
                         .frame(width: 200, height: 200)
