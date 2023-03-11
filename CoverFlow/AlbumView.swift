@@ -34,19 +34,27 @@ struct AlbumView: View {
                         }
                     }
                     List {
+                        // FIXME: Everything's centered again
                         ForEach(album.songs) {song in
-                            HStack {
-                                Text(String((album.songs.firstIndex(of: song)!) + 1))
-                                VStack(alignment: .leading) {
-                                    Text(song.name)
-                                        .multilineTextAlignment(.center)
-                                    Text(song.artist)
-                                        .font(.system(.footnote))
-                                        .multilineTextAlignment(.center)
+                            VStack {
+                                HStack(alignment: .top) {
+                                    Text(String((album.songs.firstIndex(of: song)!) + 1))
+                                        .fontWeight(.heavy)
+                                    VStack(alignment: .leading) {
+                                        Text(song.name)
+                                            .multilineTextAlignment(.leading)
+                                        Text(song.artist)
+                                            .font(.system(.footnote))
+                                            .multilineTextAlignment(.leading)
+                                    }
                                 }
+                                .multilineTextAlignment(.leading)
+                                Divider()
                             }
+                            .multilineTextAlignment(.leading)
                         }
                     }
+                    .listStyle(.plain)
                 }
                 .background(.gray)
             }
