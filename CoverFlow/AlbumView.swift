@@ -17,9 +17,11 @@ struct AlbumView: View {
                     //.ignoresSafeArea()
                 VStack {
                     HStack {
+                        Spacer()
                         Button(action: {opened.toggle()}, label: {Label("", systemImage: "chevron.left")})
                             .buttonStyle(PlainButtonStyle())
                         HStack {
+                            Spacer()
                             Spacer()
                             VStack {
                                 Text(album.name)
@@ -30,6 +32,7 @@ struct AlbumView: View {
                                     .multilineTextAlignment(.leading)
                             }
                             .multilineTextAlignment(.leading)
+                            Spacer()
                             Spacer()
                         }
                     }
